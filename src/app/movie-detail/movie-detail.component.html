@@ -1,0 +1,127 @@
+<!-- <div *ngIf="movie">
+
+    <h2>{{movie.original_title | uppercase}} Details</h2>
+    <div><span>id: </span>{{movie.id}}</div>
+    <div>
+      <label for="movie-name">Movie name: </label> -->
+<!-- TODO FIX THIS <input id="movie-name" [(ngModel)]="movie.original_title" placeholder="Movie Name"/> -->
+<!-- </div>
+  <button type="button" (click)="goBack()">go back</button>
+  </div> -->
+
+
+
+<div class="mt-5">
+  <h2 class="header" id="careerstats">Filtered Movies</h2>
+  <table class="table table-responsive table-striped .table-success">
+    <tr>
+      <th>Original Title</th>
+      <th>Overview</th>
+      <th>IMDB ID</th>
+      <th>Popularity</th>
+      <th>Budget</th>
+      <th>Revenue</th>
+      <th>Cast</th>
+      <th>Homepage</th>
+      <th>Director</th>
+      <th>Tagline</th>
+      <th>Keywords</th>
+      <th>Runtime</th>
+      <th>Genres</th>
+      <th>Production Companies</th>
+      <th>Release Date</th>
+      <th>Vote Count</th>
+      <th>Vote Average</th>
+      <th>Release Year</th>
+      <th>Budget Adj</th>
+      <th>Revenue Adj</th>
+    </tr>
+
+    <!-- <h2>{{filtered_string}}</h2> -->
+
+    <tr class="movies" *ngIf="movie">
+
+      <td>
+        <span class="name">{{movie.original_title}}</span>
+        <span class="badge">{{movie.imdb_id}}</span>
+        <span class="popularity">{{movie.popularity}}</span>
+        <span class="budget">{{movie.budget}}</span>
+        <span class="revenue">{{movie.revenue}}</span>
+        <span class="cast">{{movie.cast}}</span>
+        <span class="homepage">{{movie.homepage}}</span>
+        <span class="director">{{movie.director}}</span>
+        <span class="tagline">{{movie.tagline}}</span>
+        <span class="keywords">{{movie.keywords}}</span>
+        <span class="runtime">{{movie.runtime}}</span>
+        <span class="genre">{{movie.genres}}</span>
+        <span class="production-co">{{movie.production_companies}}</span>
+        <span class="release-date">{{movie.release_date}}</span>
+        <span class="vote-count">{{movie.vote_count}}</span>
+        <span class="vote-average">{{movie.vote_average}}</span>
+        <span class="release-year">{{movie.release_year}}</span>
+        <span class="budge-adj">{{movie.budget_adj}}</span>
+        <span class="revenue-adj">{{movie.revenue_adj}}</span>
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+
+
+<!-- Relevance Data -->
+
+
+<div class="mt-5">
+  <h2 class="header" id="careerstats">Relevant Movies</h2>
+  <table class="table table-responsive table-striped .table-success">
+    <tr>
+      <th>Original Title</th>
+      <th>Overview</th>
+      <th>IMDB ID</th>
+      <th>Popularity</th>
+      <th>Budget</th>
+      <th>Revenue</th>
+      <th>Cast</th>
+      <th>Homepage</th>
+      <th>Director</th>
+      <th>Tagline</th>
+      <th>Keywords</th>
+      <th>Runtime</th>
+      <th>Genres</th>
+      <th>Production Companies</th>
+      <th>Release Date</th>
+      <th>Vote Count</th>
+      <th>Vote Average</th>
+      <th>Release Year</th>
+      <th>Budget Adj</th>
+      <th>Revenue Adj</th>
+    </tr>
+
+    <tr class="movies" *ngIf="movies && movie">
+
+      <td *ngFor="let m of movies | pipe1:movie">
+        {{openReleventObject(m)}}
+        <span class="name">{{m.original_title}}</span>
+        <span class="badge">{{m.imdb_id}}</span>
+        <span class="popularity">{{m.popularity}}</span>
+        <span class="budget">{{m.budget}}</span>
+        <span class="revenue">{{m.revenue}}</span>
+        <span class="cast">{{m.cast}}</span>
+        <span class="homepage">{{m.homepage}}</span>
+        <span class="director">{{m.director}}</span>
+        <span class="tagline">{{m.tagline}}</span>
+        <span class="keywords">{{m.keywords}}</span>
+        <span class="runtime">{{m.runtime}}</span>
+        <span class="genre">{{m.genres}}</span>
+        <span class="production-co">{{m.production_companies}}</span>
+        <span class="release-date">{{m.release_date}}</span>
+        <span class="vote-count">{{m.vote_count}}</span>
+        <span class="vote-average">{{m.vote_average}}</span>
+        <span class="release-year">{{m.release_year}}</span>
+        <span class="budge-adj">{{m.budget_adj}}</span>
+        <span class="revenue-adj">{{m.revenue_adj}}</span>
+      </td>
+    </tr>
+  </table>
+</div>
